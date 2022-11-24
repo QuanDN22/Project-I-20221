@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.ReaderController">
+   <children>
+      <Label layoutX="31.0" layoutY="51.0" text="Reader ID" />
+      <Label layoutX="18.0" layoutY="84.0" text="Reader's name" />
+      <Label layoutX="31.0" layoutY="118.0" text="Birth date" />
+      <Label layoutX="311.0" layoutY="16.0" text="Id Card" />
+      <Label layoutX="299.0" layoutY="50.0" text="Phone num" />
+      <Label layoutX="308.0" layoutY="118.0" text="Address" />
+      <Label layoutX="299.0" layoutY="84.0" text="Expiry date" />
+      <Button fx:id="updateB" layoutX="323.0" layoutY="164.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="deleteB" layoutX="219.0" layoutY="164.0" mnemonicParsing="false" onAction="#delete" text="Delete" />
+      <Button fx:id="searchB" layoutX="493.0" layoutY="164.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <TableView fx:id="readerTable" layoutY="200.0" onMousePressed="#selectItem" prefHeight="200.0" prefWidth="601.0">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="39.167967796325684" text="Id" />
+          <TableColumn fx:id="nameCol" prefWidth="98.30392456054688" text="Name" />
+            <TableColumn fx:id="birthCol" prefWidth="89.08807373046875" text="Birth date" />
+            <TableColumn fx:id="idCardCol" prefWidth="128.2559814453125" text="Identification Card" />
+            <TableColumn fx:id="phoneCol" minWidth="7.67999267578125" prefWidth="92.927978515625" text="Phone number" />
+            <TableColumn fx:id="expiryCol" minWidth="4.6080322265625" prefWidth="79.10406494140625" text="Expiry date" />
+            <TableColumn fx:id="addressCol" minWidth="0.0" prefWidth="74.4959716796875" text="Address" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idTf" disable="true" layoutX="101.0" layoutY="47.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="nameTf" disable="true" layoutX="101.0" layoutY="80.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="birthTf" disable="true" layoutX="101.0" layoutY="114.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="addressTf" disable="true" layoutX="376.0" layoutY="114.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="idCardTf" disable="true" layoutX="376.0" layoutY="12.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="phoneTf" disable="true" layoutX="376.0" layoutY="46.0" prefHeight="28.0" prefWidth="171.0" />
+      <TextField fx:id="expiryTf" disable="true" layoutX="376.0" layoutY="80.0" prefHeight="28.0" prefWidth="171.0" />
+      <Button fx:id="backB" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Label layoutX="130.0" layoutY="16.0" text="Reader's Information" />
+      <Button fx:id="editB" layoutX="130.0" layoutY="164.0" mnemonicParsing="false" onAction="#edit" text="Edit" />
+      <Button fx:id="cancelB" layoutX="409.0" layoutY="164.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+   </children>
+</AnchorPane>

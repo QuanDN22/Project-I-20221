@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.BookSearchController">
+   <children>
+      <Label layoutX="35.0" layoutY="39.0" text="Book ID" />
+      <TextField fx:id="codeTf" layoutX="101.0" layoutY="35.0" promptText="Book Id" />
+      <Label layoutX="17.0" layoutY="105.0" text="Author's name" />
+      <Label layoutX="17.0" layoutY="72.0" text="Name of book" />
+      <Label layoutX="264.0" layoutY="39.0" text="Name of publisher" />
+      <TextField fx:id="nameTf" layoutX="101.0" layoutY="69.0" promptText="Name of book" />
+      <TextField fx:id="authorTf" layoutX="101.0" layoutY="102.0" promptText="Author's name" />
+      <TextField fx:id="publisherTf" layoutX="371.0" layoutY="35.0" promptText="Name of publisher" />
+      <TextField fx:id="yearTf" layoutX="371.0" layoutY="68.0" promptText="0000" />
+      <Label layoutX="263.0" layoutY="72.0" text="Year of publication" />
+      <Label layoutX="32.0" layoutY="140.0" text="Category" />
+      <Button fx:id="searchB" layoutX="314.0" layoutY="136.0" mnemonicParsing="false" onAction="#search" text="Search" />
+      <Button fx:id="cancelB" layoutX="413.0" layoutY="135.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Label layoutX="17.0" layoutY="14.0" text="Information of book" />
+      <ComboBox fx:id="categoryCb" layoutX="101.0" layoutY="135.0" prefHeight="27.0" prefWidth="152.0" promptText="None" />
+      <Label layoutX="263.0" layoutY="105.0" text="Bookshelf" />
+      <TextField fx:id="shelfTf" layoutX="371.0" layoutY="101.0" promptText="0-0-0-0" />
+   </children>
+</AnchorPane>

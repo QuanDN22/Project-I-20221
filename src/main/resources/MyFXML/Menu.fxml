@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="359.0" prefWidth="485.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.MenuController">
+   <children>
+      <Button fx:id="bookB" layoutX="45.0" layoutY="50.0" mnemonicParsing="false" onAction="#bookManager" prefHeight="98.0" prefWidth="181.0" text="Quản lý sách" />
+      <Button fx:id="readerB" layoutX="261.0" layoutY="50.0" mnemonicParsing="false" onAction="#readerManager" prefHeight="98.0" prefWidth="181.0" text="Quản lý độc giả" />
+      <Button fx:id="borrowB" layoutX="45.0" layoutY="203.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="98.0" prefWidth="181.0" text="Quản lý mượn - trả" />
+      <Button fx:id="logoutB" layoutX="261.0" layoutY="203.0" mnemonicParsing="false" onAction="#logout" prefHeight="98.0" prefWidth="181.0" text="Đăng xuất" />
+   </children>
+</AnchorPane>
