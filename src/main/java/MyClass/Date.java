@@ -6,7 +6,7 @@ public class Date extends SimpleStringProperty {
 
     public Date(String date){
         super(date);
-        System.out.println(getValue());
+//        System.out.println(getValue());
     }
     private int getYear(){
         int year;
@@ -16,7 +16,8 @@ public class Date extends SimpleStringProperty {
         } catch (NumberFormatException e){
             return -1;
         }
-        return 0;
+//        System.out.println("year: "+year);
+        return year;
     }
     private int getMonth(){
         int month;
@@ -26,6 +27,7 @@ public class Date extends SimpleStringProperty {
         } catch (NumberFormatException e){
             return -1;
         }
+//        System.out.println("month :"+month);
         return month;
     }
     private int getDay(){
@@ -35,10 +37,11 @@ public class Date extends SimpleStringProperty {
         } catch (NumberFormatException e){
             return -1;
         }
+//        System.out.println("day: "+day);
         return day;
     }
     public boolean isValid(){
-        System.out.println("valid: "+ this.getValue());
+//        System.out.println("valid: "+ this.getValue());
         if(this.getValue().contentEquals("0000-00-00")) return true;
         if(this.getValue().length() != 10) return false;
         String[] ss  = this.getValue().split("-", -1);
@@ -52,13 +55,12 @@ public class Date extends SimpleStringProperty {
     }
     public int getDateDif(Date date){
         int dif = 0;
-        if(!date.isValid() || !this.isValid()){
+        if( !( date.isValid()&&this.isValid() ) ){
             System.out.println("invalid date");
             return -1;
         }
         if(this.getValue().compareTo(date.getValue()) > 0){
-            System.out.println(this.getValue().compareTo(date.getValue()));
-            System.out.println("invalid appointment");
+            System.out.println("compare: "+this.getValue().compareTo(date.getValue()));
             return -1;
         }
         int[] day = {0,31,28,31,30,31,30,31,31,30,31,30,31,30,31};

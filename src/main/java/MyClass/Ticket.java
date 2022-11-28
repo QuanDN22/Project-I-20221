@@ -1,6 +1,10 @@
 package MyClass;
 
+import MyMain.Main;
 import javafx.beans.property.SimpleIntegerProperty;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public abstract class Ticket {
     SimpleIntegerProperty id;
@@ -10,9 +14,24 @@ public abstract class Ticket {
     public Ticket(int readerId, int bookId){
         this.readerId = new SimpleIntegerProperty(readerId);
         this.bookId = new SimpleIntegerProperty(bookId);
-
+    }
+    public Ticket(int id, int readerId, int bookId){
+        this.id = new SimpleIntegerProperty(id);
+        this.readerId = new SimpleIntegerProperty(readerId);
+        this.bookId = new SimpleIntegerProperty(bookId);
     }
 
+    public int getId() {
+        return id.get();
+    }
+
+    public SimpleIntegerProperty idProperty() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id.set(id);
+    }
 
     public int getReaderId() {
         return readerId.get();
@@ -38,12 +57,14 @@ public abstract class Ticket {
         this.bookId.set(bookId);
     }
 
-    public abstract boolean isValid();
-    protected boolean isValidBookID(){
-        System.out.println(getBookId());
-        return true;
+    protected boolean isValid() throws SQLException{
+        return isValidBookID() && isValidReader();
+    };
+    protected boolean isValidBookID() throws SQLException {
+       System.out.println(getBookId());
+       return true;
     }
-    protected boolean isValidReader(){
+    protected boolean isValidReader() throws SQLException {
         System.out.println(getReaderId());
         return true;
     }

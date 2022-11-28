@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 
-<AnchorPane prefHeight="535.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.CallController">
+<AnchorPane prefHeight="535.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.CallController">
    <children>
-      <TabPane prefHeight="535.0" prefWidth="566.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="535.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Borrow">
             <content>
@@ -31,39 +31,39 @@
                         <Label fx:id="bAuthorL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="140.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
                         <Label fx:id="bPublisherL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="172.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
                         <Label fx:id="bYearL" alignment="CENTER_RIGHT" layoutX="111.0" layoutY="206.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
-                        <Label layoutX="14.0" layoutY="240.0" text="Number of remains" />
-                        <Label fx:id="bAmountL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="240.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
-                        <Label layoutX="287.0" layoutY="14.0" text="Borrow book" />
-                        <Label layoutX="267.0" layoutY="40.0" text="Reader ID" />
-                        <Label layoutX="266.0" layoutY="77.0" text="Borrow date" />
-                        <Label layoutX="267.0" layoutY="108.0" text="Appointment date" />
-                        <Label layoutX="267.0" layoutY="139.0" text="Amount" />
-                        <Button fx:id="bCheckB" layoutX="294.0" layoutY="259.0" mnemonicParsing="false" onAction="#bCheck" prefHeight="27.0" prefWidth="120.0" text="Check information" />
-                        <Button fx:id="borrowB" layoutX="279.0" layoutY="211.0" mnemonicParsing="false" onAction="#borrow" prefHeight="27.0" prefWidth="65.0" text="Borrow" />
-                        <Button fx:id="bBackB" layoutX="372.0" layoutY="212.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="65.0" text="Back" />
-                        <Line endX="-7.0560150146484375" endY="157.97598266601562" layoutX="262.0" layoutY="77.0" startX="-7.0560150146484375" startY="-51.68799591064453" />
-                        <TextField fx:id="bReaderIdTf" layoutX="372.0" layoutY="36.0" prefHeight="28.0" prefWidth="91.0" />
-                        <TextField fx:id="bDateTf" layoutX="372.0" layoutY="69.0" prefHeight="28.0" prefWidth="91.0" />
-                        <TextField fx:id="aDateTf" layoutX="372.0" layoutY="102.0" prefHeight="28.0" prefWidth="91.0" />
-                        <TextField fx:id="bAmountTf" layoutX="372.0" layoutY="135.0" prefHeight="28.0" prefWidth="91.0" />
-                        <TableView fx:id="bTable" layoutX="-4.0" layoutY="299.0" prefHeight="214.0" prefWidth="574.0">
+                        <Label fx:id="bShelfL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="240.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
+                        <Label layoutX="267.0" layoutY="171.0" text="Reader ID" />
+                        <Label layoutX="267.0" layoutY="205.0" text="Borrow date" />
+                        <Label layoutX="267.0" layoutY="240.0" text="Appointment date" />
+                        <Button fx:id="bCheckB" layoutX="75.0" layoutY="268.0" mnemonicParsing="false" onAction="#bCheck" prefHeight="27.0" prefWidth="120.0" text="Check information" />
+                        <Button fx:id="borrowB" layoutX="267.0" layoutY="268.0" mnemonicParsing="false" onAction="#borrow" prefHeight="27.0" prefWidth="65.0" text="Borrow" />
+                        <Button fx:id="bBackB" layoutX="379.0" layoutY="268.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="65.0" text="Back" />
+                        <Line endX="-7.0560150146484375" endY="200.98397827148438" layoutX="262.0" layoutY="77.0" startX="-7.0560150146484375" startY="71.96000671386719" />
+                        <TextField fx:id="bReaderIdTf" layoutX="380.0" layoutY="167.0" prefHeight="28.0" prefWidth="91.0" />
+                        <TextField fx:id="bDateTf" layoutX="380.0" layoutY="202.0" prefHeight="28.0" prefWidth="91.0" />
+                        <TextField fx:id="aDateTf" layoutX="380.0" layoutY="236.0" prefHeight="28.0" prefWidth="91.0" />
+                        <TableView fx:id="bTable" layoutX="-6.0" layoutY="301.0" prefHeight="208.0" prefWidth="489.0" tableMenuButtonVisible="true">
                            <columns>
-                              <TableColumn fx:id="bBookIdCol" prefWidth="80.64001649618149" text="Book ID" />
-                              <TableColumn fx:id="bReaderIdCol" prefWidth="70.65599822998047" text="Reader ID" />
-                              <TableColumn fx:id="bDateCol" prefWidth="101.37602233886719" text="Borrow date" />
-                              <TableColumn fx:id="aDateCol" prefWidth="109.05604553222656" text="Appointment date" />
-                              <TableColumn fx:id="bAmountCol" minWidth="0.0" prefWidth="65.27996826171875" text="Amount" />
-                              <TableColumn fx:id="bCodeCol" minWidth="0.0" prefWidth="72.96002197265625" text="Code" />
-                              <TableColumn fx:id="bStatusCol" minWidth="0.0" prefWidth="70.65597534179688" text="Status" />
+                              <TableColumn fx:id="bIdCol" prefWidth="70.0" text="ID" />
+                              <TableColumn fx:id="bBookIdCol" prefWidth="70.0" text="Book ID" />
+                              <TableColumn fx:id="bReaderIdCol" prefWidth="70.0" text="Reader ID" />
+                              <TableColumn fx:id="bDateCol" prefWidth="130.0" text="Borrow date" />
+                              <TableColumn fx:id="aDateCol" prefWidth="130.0" text="Appointment date" />
                            </columns>
                         </TableView>
+                        <Line endX="221.36001586914062" endY="0.4600067138671875" layoutX="254.0" layoutY="148.0" startX="1.4439849853515625" startY="0.4600067138671875" />
+                        <Label layoutX="37.0" layoutY="240.0" text="Bookshelf" />
+                        <Label layoutX="267.0" layoutY="77.0" text="Status" />
+                        <Label fx:id="bStatusL" alignment="CENTER_RIGHT" layoutX="334.0" layoutY="77.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
+                        <Label layoutX="267.0" layoutY="108.0" text="Code" />
+                        <Label fx:id="bCodeL" alignment="CENTER_RIGHT" layoutX="334.0" layoutY="108.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
           <Tab text="Return">
             <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="475.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="505.0" prefWidth="435.0">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Information of book" />
                         <Label layoutX="46.0" layoutY="41.0" text="Book ID" />
@@ -77,34 +77,34 @@
                         <Label fx:id="rAuthorL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="140.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
                         <Label fx:id="rPublisherL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="172.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
                         <Label fx:id="rYearL" alignment="CENTER_RIGHT" layoutX="111.0" layoutY="206.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
-                        <Label layoutX="44.0" layoutY="240.0" text="Amount" />
-                        <Label fx:id="rAmountL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="240.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
-                        <Label layoutX="287.0" layoutY="14.0" text="Return book" />
-                        <Label layoutX="267.0" layoutY="40.0" text="Reader ID" />
-                        <Label layoutX="266.0" layoutY="77.0" text="Borrow date" />
-                        <Label layoutX="267.0" layoutY="108.0" text="Appointment date" />
-                        <Button fx:id="rCheckB" layoutX="294.0" layoutY="259.0" mnemonicParsing="false" onAction="#rCheck" prefHeight="28.0" prefWidth="120.0" text="Check information" />
-                        <Button fx:id="returnB" layoutX="279.0" layoutY="211.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="27.0" prefWidth="65.0" text="Return" />
-                        <Button fx:id="rBackB" layoutX="372.0" layoutY="212.0" mnemonicParsing="false" onAction="#back" prefHeight="28.0" prefWidth="65.0" text="Back" />
-                        <Line endX="-7.0560150146484375" endY="157.97598266601562" layoutX="262.0" layoutY="77.0" startX="-7.0560150146484375" startY="-51.68799591064453" />
-                        <TextField fx:id="rReaderIdTf" layoutX="372.0" layoutY="36.0" prefHeight="28.0" prefWidth="91.0" />
-                        <TextField fx:id="rAmountTf" layoutX="372.0" layoutY="135.0" prefHeight="27.0" prefWidth="90.0" />
-                        <Label fx:id="bDateL" alignment="CENTER_RIGHT" layoutX="372.0" layoutY="77.0" prefHeight="19.0" prefWidth="91.0" text="Label" />
-                        <Label fx:id="aDateL" alignment="CENTER_RIGHT" layoutX="372.0" layoutY="108.0" prefHeight="19.0" prefWidth="91.0" text="Label" />
-                        <Label layoutX="267.0" layoutY="172.0" text="Return date" />
+                        <Label fx:id="rShelfL" alignment="CENTER_RIGHT" layoutX="112.0" layoutY="240.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
+                        <Label layoutX="267.0" layoutY="171.0" text="Reader ID" />
+                        <Label layoutX="267.0" layoutY="193.0" text="Borrow date" />
+                        <Label layoutX="267.0" layoutY="215.0" text="Appointment date" />
+                        <Button fx:id="rCheckB" layoutX="75.0" layoutY="268.0" mnemonicParsing="false" onAction="#rCheck" prefHeight="28.0" prefWidth="120.0" text="Check information" />
+                        <Button fx:id="returnB" layoutX="267.0" layoutY="268.0" mnemonicParsing="false" onAction="#returnBook" prefHeight="27.0" prefWidth="65.0" text="Return" />
+                        <Button fx:id="rBackB" layoutX="379.0" layoutY="268.0" mnemonicParsing="false" onAction="#back" prefHeight="28.0" prefWidth="65.0" text="Back" />
+                        <Line endX="-7.0560150146484375" endY="200.98397827148438" layoutX="262.0" layoutY="77.0" startX="-7.0560150146484375" startY="71.19200134277344" />
+                        <Label fx:id="bDateL" alignment="CENTER_RIGHT" layoutX="379.0" layoutY="193.0" prefHeight="19.0" prefWidth="91.0" text="Label" />
+                        <Label fx:id="aDateL" alignment="CENTER_RIGHT" layoutX="379.0" layoutY="215.0" prefHeight="19.0" prefWidth="91.0" text="Label" />
+                        <Label layoutX="267.0" layoutY="240.0" text="Return date" />
                         <TextField fx:id="rBookIdTf" layoutX="113.0" layoutY="36.0" prefHeight="28.0" prefWidth="130.0" />
-                        <TableView fx:id="rTable" layoutY="294.0" prefHeight="204.0" prefWidth="574.0">
+                        <TableView fx:id="rTable" layoutX="-4.0" layoutY="301.0" prefHeight="207.0" prefWidth="488.0" tableMenuButtonVisible="true">
                            <columns>
-                              <TableColumn fx:id="rBookIdCol" prefWidth="77.56799691915512" text="Book ID" />
-                              <TableColumn fx:id="rReaderIdCol" prefWidth="89.08797454833984" text="Reader ID" />
-                              <TableColumn fx:id="rDateCol" minWidth="0.0" prefWidth="140.5440216064453" text="Return date" />
-                              <TableColumn fx:id="rAmountCol" minWidth="0.0" prefWidth="77.56793212890625" text="Amount" />
-                              <TableColumn fx:id="rCodeCol" minWidth="0.0" prefWidth="96.0" text="Code" />
-                              <TableColumn fx:id="rStatusCol" minWidth="0.0" prefWidth="83.71188354492188" text="Status" />
+                              <TableColumn fx:id="rIdCol" prefWidth="70.0" text="ID" />
+                              <TableColumn fx:id="rBookIdCol" prefWidth="70.0" text="Book ID" />
+                              <TableColumn fx:id="rReaderIdCol" prefWidth="70.0" text="Reader ID" />
+                              <TableColumn fx:id="rDateCol" minWidth="0.0" prefWidth="260.0" text="Return date" />
                            </columns>
                         </TableView>
-                        <Label layoutX="268.0" layoutY="140.0" text="Amount" />
-                        <TextField fx:id="rDateTf" layoutX="372.0" layoutY="168.0" prefHeight="27.0" prefWidth="90.0" />
+                        <TextField fx:id="rDateTf" layoutX="380.0" layoutY="236.0" prefHeight="27.0" prefWidth="90.0" />
+                        <Line endX="206.36001586914062" endY="71.19200134277344" layoutX="269.0" layoutY="77.0" startX="-12.751983642578125" startY="71.19200134277344" />
+                        <Label layoutX="37.0" layoutY="240.0" text="Bookshelf" />
+                        <Label layoutX="267.0" layoutY="77.0" text="Status" />
+                        <Label fx:id="rStatusL" alignment="CENTER_RIGHT" layoutX="334.0" layoutY="77.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
+                        <Label layoutX="267.0" layoutY="108.0" text="Code" />
+                        <Label fx:id="rCodeL" alignment="CENTER_RIGHT" layoutX="334.0" layoutY="108.0" prefHeight="19.0" prefWidth="131.0" text="Label" />
+                        <Label fx:id="rReaderIdL" alignment="CENTER_RIGHT" layoutX="379.0" layoutY="172.0" prefHeight="19.0" prefWidth="91.0" text="Label" />
                      </children>
                   </AnchorPane>
             </content>

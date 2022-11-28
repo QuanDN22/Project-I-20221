@@ -17,7 +17,7 @@ public class Main extends Application {
     public static int NumberOfBookCases = 12;
     public static int NumberOfBookShelves = 4;
     public static Stage primaryStage;
-    public static Stage secondaryStage;
+    public static Stage[] secondaryStage;
     public static Scene loginScene;
     public static Scene menuScene;
     public static Scene bookScene;
@@ -33,20 +33,14 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         connectToDatabase();
         primaryStage = stage;
-        secondaryStage = new Stage();
+
         loginScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/Login.fxml")).load());
         menuScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/Menu.fxml")).load());
         bookScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/Book.fxml")).load());
         readerScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/Reader.fxml")).load());
         readerSearchScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/ReaderSearch.fxml")).load());
-        bookSearchScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/BookSearch.fxml")).load());
-//        callScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Call.fxml")).load());
-        stage.setOnCloseRequest(p->{
-            if(secondaryStage.isShowing()){
-                secondaryStage.toFront();
-                p.consume();
-            }
-        });
+        callScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Call.fxml")).load());
+
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
         stage.show();

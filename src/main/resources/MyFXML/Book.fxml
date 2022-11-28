@@ -8,28 +8,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.BookController">
+<AnchorPane prefHeight="498.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.BookController">
    <children>
-      <Label layoutX="31.0" layoutY="51.0" text="Book Code" />
-      <TextField fx:id="codeTf" disable="true" layoutX="113.0" layoutY="48.0" promptText="AB1234" />
-      <Label layoutX="13.0" layoutY="81.0" text="Name of book" />
-      <TextField fx:id="nameTf" disable="true" layoutX="114.0" layoutY="78.0" promptText="Name of book" />
-      <Label layoutX="13.0" layoutY="142.0" text="Author's name" />
-      <TextField fx:id="authorTf" disable="true" layoutX="114.0" layoutY="139.0" promptText="Author's name" />
-      <Label layoutX="28.0" layoutY="111.0" text="Category" />
+      <Button fx:id="buttonSearch" layoutX="9.0" layoutY="136.0" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="102.0" text="Search" />
+      <Label layoutX="30.0" layoutY="41.0" text="Tittle Code" />
+      <TextField fx:id="codeTf" disable="true" layoutX="114.0" layoutY="38.0" promptText="AB1234" />
+      <TextField fx:id="nameTf" disable="true" layoutX="114.0" layoutY="67.0" promptText="Name of title" />
+      <Label layoutX="293.0" layoutY="12.0" text="Author's name" />
+      <TextField fx:id="authorTf" disable="true" layoutX="401.0" layoutY="9.0" promptText="Author's name" />
+      <Label layoutX="35.0" layoutY="101.0" text="Category" />
       <Label layoutX="282.0" layoutY="41.0" text="Name of publisher" />
       <TextField fx:id="publisherTf" disable="true" layoutX="401.0" layoutY="38.0" promptText="Name of publisher" />
       <Label layoutX="281.0" layoutY="71.0" text="Year of publication" />
       <TextField fx:id="yearTf" disable="true" layoutX="401.0" layoutY="66.0" promptText="0000" />
       <Label layoutX="285.0" layoutY="98.0" text="Amount of books" />
       <TextField fx:id="amountTf" disable="true" layoutX="401.0" layoutY="94.0" prefHeight="27.0" prefWidth="152.0" promptText="0" />
-      <Button fx:id="addB" layoutX="303.0" layoutY="199.0" mnemonicParsing="false" onAction="#add" prefHeight="28.0" prefWidth="58.0" text="Add" />
-      <Button fx:id="editB" layoutX="114.0" layoutY="200.0" mnemonicParsing="false" onAction="#edit" prefHeight="27.0" prefWidth="78.0" text="Edit book" />
-      <Button fx:id="deleteB" layoutX="201.0" layoutY="200.0" mnemonicParsing="false" onAction="#delete" text="Delete book" />
-      <Button fx:id="searchB" layoutX="458.0" layoutY="198.0" mnemonicParsing="false" onAction="#search" prefHeight="28.0" prefWidth="58.0" text="Search" />
-      <TableView fx:id="bookTable" layoutY="232.0" onMousePressed="#selectItem" prefHeight="167.0" prefWidth="601.0" tableMenuButtonVisible="true">
+      <Button fx:id="buttonUpdate" layoutX="365.0" layoutY="199.0" mnemonicParsing="false" onAction="#update" prefHeight="28.0" prefWidth="58.0" text="Ok" />
+      <Button fx:id="buttonEdit" layoutX="223.0" layoutY="199.0" mnemonicParsing="false" onAction="#editTitle" prefHeight="28.0" prefWidth="102.0" text="Edit Title" />
+      <Button fx:id="buttonDelete" layoutX="116.0" layoutY="199.0" mnemonicParsing="false" onAction="#deleteTitle" prefHeight="28.0" prefWidth="102.0" text="Delete Title" />
+      <TableView fx:id="titleTable" editable="true" layoutY="232.0" onMousePressed="#select" prefHeight="282.0" prefWidth="885.0" tableMenuButtonVisible="true">
         <columns>
-          <TableColumn fx:id="codeCol" prefWidth="86.78396421670914" text="Code" />
+          <TableColumn fx:id="tCodeCol" prefWidth="86.78396421670914" text="Code" />
           <TableColumn fx:id="nameCol" prefWidth="85.248046875" text="Name" />
             <TableColumn fx:id="authorCol" prefWidth="105.98394775390625" text="Author" />
             <TableColumn fx:id="categoryCol" prefWidth="96.76800537109375" text="Category" />
@@ -43,15 +42,24 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button fx:id="backB" layoutX="31.0" layoutY="10.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <Label layoutX="134.0" layoutY="22.0" text="BOOK INFORMATION" />
-      <Button fx:id="updateB" layoutX="303.0" layoutY="199.0" mnemonicParsing="false" onAction="#update" prefHeight="27.0" prefWidth="58.0" text="Update" />
-      <Button fx:id="cancelB" layoutX="380.0" layoutY="198.0" mnemonicParsing="false" onAction="#cancel" prefHeight="28.0" prefWidth="58.0" text="Cancel" />
-      <Button fx:id="newB" layoutX="15.0" layoutY="200.0" mnemonicParsing="false" onAction="#newBook" prefHeight="27.0" prefWidth="90.0" text="New book" />
-      <ComboBox fx:id="categoryCb" disable="true" layoutX="114.0" layoutY="108.0" prefHeight="27.0" prefWidth="152.0" promptText="None" />
+      <Button fx:id="buttonBack" layoutX="34.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" prefHeight="0.0" prefWidth="49.0" text="Back" />
+      <Label layoutX="131.0" layoutY="13.0" text="BOOK INFORMATION" />
+      <Button fx:id="buttonCancel" layoutX="448.0" layoutY="199.0" mnemonicParsing="false" onAction="#cancel" prefHeight="28.0" prefWidth="58.0" text="Cancel" />
+      <Button fx:id="buttonNew" layoutX="9.0" layoutY="199.0" mnemonicParsing="false" onAction="#newTitle" prefHeight="28.0" prefWidth="102.0" text="New Title" />
+      <ComboBox fx:id="categoryCb" disable="true" layoutX="114.0" layoutY="97.0" prefHeight="27.0" prefWidth="152.0" promptText="None" />
       <TextField fx:id="availableTf" disable="true" layoutX="401.0" layoutY="123.0" prefHeight="27.0" prefWidth="152.0" promptText="0" />
       <Label layoutX="290.0" layoutY="126.0" text="Available books" />
       <Label layoutX="306.0" layoutY="156.0" text="Bookshelf" />
       <TextField fx:id="shelfTf" disable="true" layoutX="401.0" layoutY="152.0" prefHeight="27.0" prefWidth="152.0" promptText="0-0-0-0" />
+      <Button fx:id="buttonAdd" layoutX="9.0" layoutY="167.0" mnemonicParsing="false" onAction="#addBook" prefHeight="28.0" prefWidth="102.0" text="Add book" />
+      <Button fx:id="buttonRemove" layoutX="116.0" layoutY="167.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="28.0" prefWidth="102.0" text="Remove book" />
+      <Label layoutX="23.0" layoutY="69.0" text="Name of title" />
+      <TableView fx:id="bookTable" editable="true" layoutX="563.0" layoutY="11.0" prefHeight="213.0" prefWidth="310.0" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="idCol" prefWidth="118.27203369140625" text="Id" />
+          <TableColumn fx:id="bCodeCol" prefWidth="75.0" text="Code" />
+            <TableColumn fx:id="statusCol" prefWidth="118.27203369140625" text="Status" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

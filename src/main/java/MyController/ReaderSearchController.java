@@ -25,8 +25,8 @@ public class ReaderSearchController implements Initializable {
 
     private ObservableList<Map.Entry<Integer, Reader>> list = FXCollections.observableArrayList();
 
-
-    public void search(ActionEvent event){
+    @FXML
+    private void search(ActionEvent event){
 
         ReaderController.users.clear();
         String name ='%'+ nameTf.getText() +'%';
@@ -58,10 +58,10 @@ public class ReaderSearchController implements Initializable {
 
 //        BookController.books = result;
     }
-    public void cancel(ActionEvent event){
+    @FXML
+    private void cancel(ActionEvent event){
         ReaderController.users.clear();
         ReaderController.users.addAll(list);
-        Main.secondaryStage.close();
         idTf.setText("");
         nameTf.setText("");
         phoneTf.setText("");
