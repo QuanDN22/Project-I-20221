@@ -27,7 +27,8 @@ public class LoginController implements Initializable {
     private TextField passwordField;
     public static final ObservableList<User> USERS = FXCollections.observableArrayList();
     private User user;
-    public void login(ActionEvent event){
+    @FXML
+    private void login(ActionEvent event){
         String username = usernameField.getText();
         String password = passwordField.getText();
         user = new User(username, password);
@@ -46,13 +47,15 @@ public class LoginController implements Initializable {
             status.setText("Login unsuccessfully!");
         }
     }
-    public void exit(ActionEvent event) throws SQLException {
+    @FXML
+    private void exit(ActionEvent event) throws SQLException {
         Main.statement.close();
         Main.connection.close();
         Main.primaryStage.close();
         System.out.println("Successfully!");
     }
-    public void register(ActionEvent event){
+    @FXML
+    private void register(ActionEvent event){
         String username = usernameField.getText();
         String password = passwordField.getText();
         user = new User(username, password);
