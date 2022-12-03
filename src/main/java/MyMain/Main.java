@@ -49,6 +49,7 @@ public class Main extends Application {
         });
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
+        stage.setResizable(false);
         stage.show();
     }
     public static void connectToDatabase() {
