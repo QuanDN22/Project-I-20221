@@ -111,14 +111,12 @@ public class BookController implements Initializable {
     }
     @FXML
     private void newTitle(ActionEvent event){
-        if(!MenuController.stages[0].isShowing()){
-            setBlankTf();
-            changeTfMode(false);
-            changeBMode(true);
-            categoryCb.setEditable(true);
-            availableTf.setDisable(true);
-            mode = Mode.NEW_TITLE;
-        } else MenuController.stages[0].toFront();
+        setBlankTf();
+        changeTfMode(false);
+        changeBMode(true);
+        categoryCb.setEditable(true);
+        availableTf.setDisable(true);
+        mode = Mode.NEW_TITLE;
     }
     @FXML
     private void editTitle(ActionEvent event){

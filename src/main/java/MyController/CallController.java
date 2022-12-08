@@ -253,6 +253,7 @@ public class CallController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
         bTable.setItems(bTickets);
         rTable.setItems(rTickets);
     }

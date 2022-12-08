@@ -40,7 +40,7 @@ public class Main extends Application {
         readerScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/Reader.fxml")).load());
         readerSearchScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/ReaderSearch.fxml")).load());
         callScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Call.fxml")).load());
-
+//        callScene.getStylesheets().add("C:\\Users\\DELL\\OneDrive - Hanoi University of Science and Technology\\Máy tính\\Project-I-20221\\src\\main\\resources\\MyCss\\My.css");
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
         stage.show();
