@@ -189,7 +189,7 @@ public class BookController implements Initializable {
         code = codeTf.getText();
         name = nameTf.getText();
         category = categoryCb.getValue();
-        if(category.contentEquals("")) category = "None";
+        if(category == null) category = "None";
         author = authorTf.getText();
         publisher = publisherTf.getText();
         try{
