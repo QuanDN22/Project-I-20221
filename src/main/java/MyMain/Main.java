@@ -43,6 +43,7 @@ public class Main extends Application {
 //        callScene.getStylesheets().add("C:\\Users\\DELL\\OneDrive - Hanoi University of Science and Technology\\Máy tính\\Project-I-20221\\src\\main\\resources\\MyCss\\My.css");
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
+        stage.setResizable(false);
         stage.show();
     }
     public static void connectToDatabase() {
