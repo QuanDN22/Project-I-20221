@@ -41,6 +41,15 @@ public class Main extends Application {
         readerSearchScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/ReaderSearch.fxml")).load());
         callScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Call.fxml")).load());
 //        callScene.getStylesheets().add("C:\\Users\\DELL\\OneDrive - Hanoi University of Science and Technology\\Máy tính\\Project-I-20221\\src\\main\\resources\\MyCss\\My.css");
+
+//        loginScene.getStylesheets().add("/demo.css");
+//        loginScene.getStylesheets().add("file:/"+System.getProperty("user.dir").replace("\\", "/")+"/My.css");
+//        menuScene.getStylesheets().add("resources/MyCss/My.css");
+//        bookScene.getStylesheets().add("resources/MyCss/My.css");
+//        readerScene.getStylesheets().add("/main/resources/MyCss/My.css");
+//        readerSearchScene.getStylesheets().add("/main/resources/MyCss/My.css");
+//        callScene.getStylesheets().add("main/resources/MyCss/My.css");
+
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
         stage.setResizable(false);
@@ -50,8 +59,8 @@ public class Main extends Application {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=PROJECT_1;encrypt=true;trustServerCertificate=true;";
-            String user = "Thanh";
-            String pass = "123456";
+            String user = "sa"; // Thanh
+            String pass = "123"; // 123456
 
             connection = DriverManager.getConnection(dbURL, user, pass);
             statement = connection.createStatement();

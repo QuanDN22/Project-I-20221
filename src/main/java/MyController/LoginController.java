@@ -19,8 +19,8 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
     @FXML
     private Button loginB,registerB,exitB;
-    @FXML
-    private Label status;
+//    @FXML
+//    private Label status;
     @FXML
     private TextField usernameField;
     @FXML
@@ -37,14 +37,14 @@ public class LoginController implements Initializable {
             if(u.equals(user)) {
                 Main.primaryStage.setScene(Main.menuScene);
                 System.out.println("Successfully!");
-                status.setText("Login successfully!");
+//                status.setText("Login successfully!");
                 c = 1;
                 break;
             }
 //        Main.primaryStage.setScene(Main.menuScene);
         if(c == 0) {
             System.out.println("Unsuccessfully!");
-            status.setText("Login unsuccessfully!");
+//            status.setText("Login unsuccessfully!");
         }
     }
     @FXML
@@ -65,14 +65,14 @@ public class LoginController implements Initializable {
                 sql = String.format("insert into [Users](username, password) values('%s', '%s')", username, password);
                 Main.statement.executeUpdate(sql);
                 System.out.println("Successfully!");
-                status.setText("Register successfully!");
+//                status.setText("Register successfully!");
                 USERS.add(user);
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
         } else {
             System.out.println("Unsuccessfully!");
-            status.setText("Register unsuccessfully!");
+//            status.setText("Register unsuccessfully!");
         }
     }
     @Override

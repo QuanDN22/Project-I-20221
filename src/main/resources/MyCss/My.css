@@ -66,3 +66,21 @@
     -fx-border-color: derive(-fx-pie-color, 1%);
     -fx-border-width: 0px;
 }
+
+/* css cho man hinh login */
+
+#loginB {
+}
+#loginB:hover {
+    -fx-text-fill: white;
+}
+#exitB:hover {
+    -fx-text-fill: white;
+}
+#registerB {
+}
+#registerB:hover {
+    -fx-text-fill:#0D4C92
+}
+
+
