@@ -53,6 +53,7 @@ public class Date extends SimpleStringProperty {
         if(getYear() % 4 == 0 && getYear() % 100 != 0) day[2] = 29;
         return getDay() <= day[getMonth()] && getDay() > 0;
     }
+    //khoang cach tu this toi date, this <= date
     public int getDateDif(Date date){
         int dif = 0;
         if( !( date.isValid()&&this.isValid() ) ){
