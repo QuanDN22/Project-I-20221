@@ -25,6 +25,7 @@ public class Main extends Application {
     public static Scene callScene;
     public static Scene bookSearchScene;
     public static Scene readerSearchScene;
+    public static Scene registerScene;
     public static Connection connection;
     public static Statement statement;
 
@@ -41,6 +42,7 @@ public class Main extends Application {
         readerSearchScene = new Scene(new FXMLLoader(Main.class.getResource("/MyFXML/ReaderSearch.fxml")).load());
         callScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Call.fxml")).load());
 //        callScene.getStylesheets().add("C:\\Users\\DELL\\OneDrive - Hanoi University of Science and Technology\\Máy tính\\Project-I-20221\\src\\main\\resources\\MyCss\\My.css");
+        registerScene = new Scene(new FXMLLoader(MyMain.Main.class.getResource("/MyFXML/Register.fxml")).load());
 
         stage.setTitle("Library Project");
         stage.setScene(loginScene);
@@ -51,8 +53,8 @@ public class Main extends Application {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             String dbURL = "jdbc:sqlserver://localhost:1433;databaseName=PROJECT_1;encrypt=true;trustServerCertificate=true;";
-            String user = "Thanh"; // Thanh
-            String pass = "123456"; // 123456
+            String user = "sa";
+            String pass = "123";
 
             connection = DriverManager.getConnection(dbURL, user, pass);
             statement = connection.createStatement();

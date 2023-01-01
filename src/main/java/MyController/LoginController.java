@@ -6,14 +6,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
@@ -27,6 +31,7 @@ public class LoginController implements Initializable {
     private TextField passwordField;
     public static final ObservableList<User> USERS = FXCollections.observableArrayList();
     private User user;
+
     @FXML
     private void login(ActionEvent event){
         String username = usernameField.getText();
@@ -45,6 +50,8 @@ public class LoginController implements Initializable {
         if(c == 0) {
             System.out.println("Unsuccessfully!");
 //            status.setText("Login unsuccessfully!");
+            String text = "Sai tên đăng nhập hoặc mật khẩu. Nhập lại!";
+            showAlertErrorLogin(text);
         }
     }
     @FXML
@@ -56,24 +63,7 @@ public class LoginController implements Initializable {
     }
     @FXML
     private void register(ActionEvent event){
-        String username = usernameField.getText();
-        String password = passwordField.getText();
-        user = new User(username, password);
-        if(user.isValidAccount()) {
-            try {
-                String sql;
-                sql = String.format("insert into [Users](username, password) values('%s', '%s')", username, password);
-                Main.statement.executeUpdate(sql);
-                System.out.println("Successfully!");
-//                status.setText("Register successfully!");
-                USERS.add(user);
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        } else {
-            System.out.println("Unsuccessfully!");
-//            status.setText("Register unsuccessfully!");
-        }
+        Main.primaryStage.setScene(Main.registerScene);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
@@ -89,5 +79,37 @@ public class LoginController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void showAlertErrorLogin(String text) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Cảnh báo đăng nhập");
+        alert.setHeaderText("Đăng nhập thất bại");
+        alert.setContentText(text);
+
+        ButtonType close = new ButtonType("Close", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alert.getButtonTypes().setAll(close);
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == close) {
+            alert.close();
+        }
+    }
+
+
+    // Phương thức chuyển màn hình
+    public static void changeScene(ActionEvent event, String fxmlFile, String title) {
+        Parent root = null;
+
+        try {
+            root = FXMLLoader.load(LoginController.class.getResource(fxmlFile));
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setTitle(title);
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
+        stage.show();
     }
 }
