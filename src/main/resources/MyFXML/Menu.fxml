@@ -9,15 +9,15 @@
 
 <AnchorPane fx:id="sceneMenu" prefHeight="359.0" prefWidth="584.0" style="-fx-background-color: #A77979;" stylesheets="@../MyCss/My.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.MenuController">
    <children>
-      <Button fx:id="bookB" layoutX="280.0" layoutY="90.0" mnemonicParsing="false" onAction="#bookManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý sách" textFill="#d9c3c3">
+      <Button fx:id="bookB" layoutX="280.0" layoutY="135.0" mnemonicParsing="false" onAction="#bookManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý sách" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="readerB" layoutX="280.0" layoutY="160.0" mnemonicParsing="false" onAction="#readerManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý độc giả" textFill="#d9c3c3">
+      <Button fx:id="readerB" layoutX="280.0" layoutY="190.0" mnemonicParsing="false" onAction="#readerManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý độc giả" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="borrowB" layoutX="280.0" layoutY="230.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý mượn - trả" textFill="#d9c3c3">
+      <Button fx:id="borrowB" layoutX="280.0" layoutY="245.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý mượn - trả" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
@@ -25,17 +25,17 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/book.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/readers.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/borrow.png" />
          </image>
@@ -53,6 +53,16 @@
       <ImageView fitHeight="359.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/library.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="registerR" layoutX="280.0" layoutY="80.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="200.0" text="Đăng ký đọc giả" textFill="#d9c3c3">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="50.0" layoutX="505.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Registered.png" />
          </image>
       </ImageView>
    </children>

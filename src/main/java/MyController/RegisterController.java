@@ -10,12 +10,12 @@ import javafx.scene.input.KeyCode;
 import java.net.URL;
 import java.sql.SQLException;
 
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Locale;
@@ -23,11 +23,12 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
+    DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    LocalDateTime now = LocalDateTime.now();
+
 
     @FXML
-    private TextField fullName, userName, idCard, phone, add, birth, expiry;
-    @FXML
-    private PasswordField passWord;
+    private TextField fullName, idCard, phone, add, birth;
 
 
     private static SimpleDateFormat inSDF = new SimpleDateFormat("dd/mm/yyyy");
@@ -39,16 +40,6 @@ public class RegisterController implements Initializable {
         // Khi gõ enter sẽ chuyển sang nhập pass
         fullName.setOnKeyPressed(keyEvent -> {
             if(keyEvent.getCode().equals(KeyCode.ENTER)) {
-                userName.requestFocus();
-            }
-        });
-        userName.setOnKeyPressed(keyEvent -> {
-            if(keyEvent.getCode().equals(KeyCode.ENTER)) {
-                passWord.requestFocus();
-            }
-        });
-        passWord.setOnKeyPressed(keyEvent -> {
-            if(keyEvent.getCode().equals(KeyCode.ENTER)) {
                 idCard.requestFocus();
             }
         });
@@ -58,11 +49,6 @@ public class RegisterController implements Initializable {
             }
         });
         birth.setOnKeyPressed(keyEvent -> {
-            if(keyEvent.getCode().equals(KeyCode.ENTER)) {
-                expiry.requestFocus();
-            }
-        });
-        expiry.setOnKeyPressed(keyEvent -> {
             if(keyEvent.getCode().equals(KeyCode.ENTER)) {
                 phone.requestFocus();
             }
@@ -76,9 +62,9 @@ public class RegisterController implements Initializable {
 
     private void register() throws SQLException{
         try {
-            String sql = "INSERT INTO [dbo].[Users] " + "VALUES ('" + userName.getText() + "', '" + passWord.getText() +"', N'"
+            String sql = "INSERT INTO [dbo].[Users] " + "VALUES ('" + null + "', '" + null +"', N'"
                     + fullName.getText() +"', '" + formatDate(birth.getText()) + "', '" + idCard.getText() + "', '" + phone.getText()
-                    +"', '" + formatDate(expiry.getText()) + "', N'" + add.getText() +"');";
+                    +"', '" + updateYearExpiry(dtf.format(now) +"") + "', N'" + add.getText() +"');";
             Main.statement.executeUpdate(sql);
         } catch (SQLException e) {
             System.out.println("Thêm dữ liệu thất bại :" + e);
@@ -88,9 +74,8 @@ public class RegisterController implements Initializable {
 
     // Kiểm tra xem có ô trống nào chưa được điền không
     private int checkIsNull() {
-        if (userName.getText().isEmpty() || passWord.getText().isEmpty() || fullName.getText().isEmpty()
-                || idCard.getText().isEmpty() || phone.getText().isEmpty() || add.getText().isEmpty()
-                || birth.getText().isEmpty() || expiry.getText().isEmpty()) {
+        if (fullName.getText().isEmpty() || idCard.getText().isEmpty() || phone.getText().isEmpty()
+                || add.getText().isEmpty() || birth.getText().isEmpty()) {
             return 0;
         }
         return 1;
@@ -98,12 +83,9 @@ public class RegisterController implements Initializable {
 
     private void clearText() {
         fullName.clear();
-        userName.clear();
-        passWord.clear();
         birth.clear();
         idCard.clear();
         phone.clear();
-        expiry.clear();
         add.clear();
     }
 
@@ -111,24 +93,20 @@ public class RegisterController implements Initializable {
     @FXML
     private void Continue(ActionEvent event) throws SQLException {
         if (checkIsNull() == 0) {
-            String text = "Nhập đầy đủ thông tin!";
-            showAlertErrorSignup(text, "Cảnh báo", "Đăng kí thất bại");
+            String text = "Enter complete information!";
+            showAlertErrorSignup(text, "Warning", "Registration failed");
         } else {
             if(isValidFormat("dd/MM/yyyy", birth.getText(), Locale.ENGLISH) == false) {
-                String text = "Birth date sai định dạng 'ngày/tháng/năm'. Nhập lại!";
-                showAlertErrorSignup(text, "Cảnh báo", null);
-            }
-            else if (isValidFormat("dd/MM/yyyy", expiry.getText(), Locale.ENGLISH) == false) {
-                String text = "Expiry date sai định dạng 'ngày/tháng/năm'. Nhập lại!";
-                showAlertErrorSignup(text, "Cảnh báo", null);
+                String text = "Birth date is in the wrong format. Retype!";
+                showAlertErrorSignup(text, "Warning", null);
             }
             else {
                 register();
-                String text = "Đăng kí thành công!";
+                String text = "Registration successful!";
                 showAlertSuccessSignup(text);
                 System.out.println("\nĐăng kí thành công!\n");
                 clearText();
-                LoginController.changeScene(event, "/MyFXML/Login.fxml", "Library Project");
+                LoginController.changeScene(event, "/MyFXML/Menu.fxml", "Library Project");
             }
         }
     }
@@ -137,7 +115,7 @@ public class RegisterController implements Initializable {
     @FXML
     private void Back(ActionEvent event) {
         clearText();
-        LoginController.changeScene(event, "/MyFXML/Login.fxml", "Library Project");
+        LoginController.changeScene(event, "/MyFXML/Menu.fxml", "Library Project");
     }
 
     // Tạo 1 thông báo alert khi nhập thiếu thông tin
@@ -209,5 +187,28 @@ public class RegisterController implements Initializable {
             }
         }
         return false;
+    }
+
+    // Update ngày hết hạn
+    public static String updateYearExpiry(String date) {
+        if (!date.isEmpty()) {
+            String expiryDate = "";
+            String[] parts = date.split("/");
+            int leng = parts.length - 1;
+
+            for (int i = 0; i < parts.length; i++) {
+                if (i != leng) {
+                    expiryDate += (parts[i] + "/");
+                } else {
+                    int year = Integer.parseInt(parts[i]) + 5;
+                    expiryDate += String.valueOf(year);
+                }
+
+            }
+            return expiryDate;
+        }
+        else {
+            return null;
+        }
     }
 }

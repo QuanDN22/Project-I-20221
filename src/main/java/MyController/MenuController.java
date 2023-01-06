@@ -41,6 +41,12 @@ public class MenuController implements Initializable {
         }
         Main.primaryStage.setScene(Main.loginScene);
     }
+
+    @FXML
+    private void register(ActionEvent event){
+        Main.primaryStage.setScene(Main.registerScene);
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         stages[0] = new Stage();

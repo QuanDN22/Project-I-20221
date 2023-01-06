@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -35,67 +34,47 @@
                         <Font name="Arial Bold" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="fullName" layoutX="25.0" layoutY="80.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
+                  <TextField fx:id="fullName" layoutX="25.0" layoutY="110.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="userName" layoutX="25.0" layoutY="135.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
+                  <Label layoutX="25.0" layoutY="230.0" text="Birth date">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idCard" layoutX="25.0" layoutY="180.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="172.0" layoutY="280.0" text="Expiry date">
+                  <Label layoutX="25.0" layoutY="90.0" text="Full name">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="25.0" layoutY="280.0" text="Birth date">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="idCard" layoutX="25.0" layoutY="245.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
+                  <TextField fx:id="phone" layoutX="25.0" layoutY="320.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="25.0" layoutY="115.0" prefWidth="74.0" text="Username">
+                  <Label layoutX="25.0" layoutY="160.0" text="ID Card">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="25.0" layoutY="170.0" text="Password">
+                  <Label layoutX="25.0" layoutY="300.0" text="Phone number">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="25.0" layoutY="60.0" text="Full name">
+                  <Label layoutX="25.0" layoutY="370.0" text="Address">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="phone" layoutX="25.0" layoutY="355.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="25.0" layoutY="225.0" text="ID Card">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="25.0" layoutY="335.0" text="Phone number">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="25.0" layoutY="390.0" text="Address">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="add" layoutX="25.0" layoutY="410.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
+                  <TextField fx:id="add" layoutX="25.0" layoutY="390.0" prefHeight="26.0" prefWidth="265.0" style="-fx-background-color: F8EDE3;">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>
@@ -105,53 +84,37 @@
                         <Font name="Arial Bold" size="20.0" />
                      </font>
                   </Button>
-                  <PasswordField fx:id="passWord" layoutX="25.0" layoutY="190.0" prefHeight="26.0" prefWidth="266.0" style="-fx-background-color: F8EDE3;" />
-                  <Label layoutX="94.0" layoutY="60.0" text="*" textFill="#ff1717">
+                  <Label layoutX="94.0" layoutY="90.0" text="*" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="97.0" layoutY="116.0" text="*" textFill="#ff1717">
+                  <Label layoutX="94.0" layoutY="171.0" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="94.0" layoutY="171.0" text="*" textFill="#ff1717">
+                  <Label layoutX="80.0" layoutY="160.0" text="*" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="80.0" layoutY="226.0" text="*" textFill="#ff1717">
+                  <Label layoutX="91.0" layoutY="230.0" text="*" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="91.0" layoutY="281.0" text="*" textFill="#ff1717">
+                  <Label layoutX="127.0" layoutY="300.0" text="*" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="250.0" layoutY="281.0" text="*" textFill="#ff1717">
+                  <Label layoutX="83.0" layoutY="370.0" text="*" textFill="#ff1717">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="127.0" layoutY="336.0" text="*" textFill="#ff1717">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="83.0" layoutY="391.0" text="*" textFill="#ff1717">
-                     <font>
-                        <Font name="Arial Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="birth" layoutX="24.0" layoutY="300.0" prefHeight="27.0" prefWidth="130.0" promptText="dd/mm/yyyy" style="-fx-background-color: F8EDE3;">
-                     <font>
-                        <Font name="Arial" size="15.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="expiry" layoutX="169.0" layoutY="300.0" prefHeight="27.0" prefWidth="122.0" promptText="dd/mm/yyyy" style="-fx-background-color: F8EDE3;">
+                  <TextField fx:id="birth" layoutX="24.0" layoutY="250.0" prefHeight="27.0" prefWidth="266.0" promptText="dd/mm/yyyy" style="-fx-background-color: F8EDE3;">
                      <font>
                         <Font name="Arial" size="15.0" />
                      </font>

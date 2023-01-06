@@ -50,7 +50,7 @@ public class LoginController implements Initializable {
         if(c == 0) {
             System.out.println("Unsuccessfully!");
 //            status.setText("Login unsuccessfully!");
-            String text = "Sai tên đăng nhập hoặc mật khẩu. Nhập lại!";
+            String text = "Wrong username or password. Retype!";
             showAlertErrorLogin(text);
         }
     }
@@ -83,8 +83,8 @@ public class LoginController implements Initializable {
 
     private void showAlertErrorLogin(String text) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Cảnh báo đăng nhập");
-        alert.setHeaderText("Đăng nhập thất bại");
+        alert.setTitle("Login Warning");
+        alert.setHeaderText(null);
         alert.setContentText(text);
 
         ButtonType close = new ButtonType("Close", ButtonBar.ButtonData.CANCEL_CLOSE);
