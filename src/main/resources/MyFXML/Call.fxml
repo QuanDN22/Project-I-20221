@@ -7,14 +7,24 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="535.0" prefWidth="431.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.CallController">
+<AnchorPane prefHeight="535.0" prefWidth="431.0" style="-fx-background-color: #D0B8A8;" stylesheets="@../MyCss/My.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.CallController">
    <children>
-      <Label layoutX="75.0" layoutY="40.0" prefHeight="19.0" prefWidth="121.0" text="Information of book" />
+      <Label layoutX="188.0" layoutY="26.0" prefHeight="27.0" prefWidth="177.0" text="Information of book">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
       <Label layoutX="40.0" layoutY="75.0" text="Book ID" />
       <TextField fx:id="bookIDTf" alignment="CENTER_RIGHT" layoutX="106.0" layoutY="70.0" prefHeight="28.0" prefWidth="130.0" promptText="12345" />
-      <Button fx:id="checkB" layoutX="21.0" layoutY="299.0" mnemonicParsing="false" onAction="#check" prefHeight="27.0" prefWidth="120.0" text="Check information" />
-      <Button fx:id="backB" layoutX="7.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="60.0" text="Back" />
+      <Button fx:id="checkB" layoutX="14.0" layoutY="286.0" mnemonicParsing="false" onAction="#check" prefHeight="27.0" prefWidth="130.0" text="Check information">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="backB" layoutX="7.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="60.0" text="Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Label layoutX="19.0" layoutY="115.0" text="Name of book" />
       <Label layoutX="36.0" layoutY="155.0" text="Category" />
       <Label layoutX="18.0" layoutY="195.0" text="Author's name" />
@@ -23,7 +33,7 @@
       <Label layoutX="267.0" layoutY="195.0" text="Bookshelf" />
       <Label layoutX="277.0" layoutY="235.0" text="Status" />
       <Label layoutX="279.0" layoutY="115.0" text="Code" />
-      <TableView fx:id="tTable" layoutY="329.0" prefHeight="207.0" prefWidth="751.0" tableMenuButtonVisible="true">
+      <TableView fx:id="tTable" layoutY="329.0" prefHeight="207.0" prefWidth="751.0" style="-fx-background-color: #FAECD6;" stylesheets="@../MyCss/My.css" tableMenuButtonVisible="true">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="70.0" text="ID" />
             <TableColumn fx:id="bookIdCol" prefWidth="70.0" text="Book ID" />
@@ -35,7 +45,10 @@
             <TableColumn fx:id="pDateCol" minWidth="0.0" prefWidth="100.0" text="Penalty date" />
          </columns>
       </TableView>
-      <Button fx:id="updateB" layoutX="515.0" layoutY="299.0" mnemonicParsing="false" onAction="#update" prefWidth="60.0" text="OK" visible="false" />
+      <Button fx:id="updateB" layoutX="525.0" layoutY="286.0" mnemonicParsing="false" onAction="#update" prefWidth="60.0" text="OK" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Line endX="-7.055999755859375" endY="313.2879943847656" layoutX="500.0" layoutY="-14.0" startX="-7.0560150146484375" startY="71.19200134277344" />
       <Label layoutX="528.0" layoutY="75.0" text="Reader ID" />
       <Label layoutX="521.0" layoutY="115.0" text="Borrow date" />
@@ -43,7 +56,10 @@
       <TextField fx:id="readerIDTf" alignment="CENTER_RIGHT" layoutX="616.0" layoutY="70.0" prefHeight="28.0" prefWidth="91.0" promptText="1234" />
       <TextField fx:id="bDateTf" alignment="CENTER_RIGHT" editable="false" layoutX="616.0" layoutY="110.0" prefHeight="28.0" prefWidth="91.0" promptText="0000-00-00" />
       <TextField fx:id="aDateTf" alignment="CENTER_RIGHT" editable="false" layoutX="616.0" layoutY="150.0" prefHeight="28.0" prefWidth="91.0" promptText="0000-00-00" />
-      <Label layoutX="548.0" layoutY="40.0" prefHeight="19.0" prefWidth="111.0" text="Information of ticket" />
+      <Label layoutX="545.0" layoutY="26.0" prefHeight="27.0" prefWidth="178.0" text="Information of ticket">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
       <TextField fx:id="nameTf" alignment="CENTER_RIGHT" editable="false" layoutX="106.0" layoutY="110.0" prefHeight="28.0" prefWidth="130.0" promptText="name" />
       <TextField fx:id="categoryTf" alignment="CENTER_RIGHT" editable="false" layoutX="106.0" layoutY="150.0" prefHeight="28.0" prefWidth="130.0" promptText="category" />
       <TextField fx:id="authorTf" alignment="CENTER_RIGHT" editable="false" layoutX="106.0" layoutY="190.0" prefHeight="28.0" prefWidth="130.0" promptText="name" />
@@ -53,11 +69,26 @@
       <TextField fx:id="shelfTf" alignment="CENTER_RIGHT" editable="false" layoutX="353.0" layoutY="190.0" prefHeight="28.0" prefWidth="130.0" promptText="0-0-0-0" />
       <TextField fx:id="statusTf" alignment="CENTER_RIGHT" editable="false" layoutX="353.0" layoutY="230.0" prefHeight="28.0" prefWidth="130.0" promptText="status" />
       <TextField fx:id="uDateTf" alignment="CENTER_RIGHT" layoutX="616.0" layoutY="190.0" prefHeight="28.0" prefWidth="91.0" promptText="0000-00-00" visible="false" />
-      <Button fx:id="borrowB" layoutX="180.0" layoutY="299.0" mnemonicParsing="false" onAction="#borrow" prefWidth="60.0" text="Borrow" />
-      <Button fx:id="returnB" layoutX="250.0" layoutY="299.0" mnemonicParsing="false" onAction="#returnBook" prefWidth="60.0" text="Return" />
-      <Button fx:id="extendB" layoutX="320.0" layoutY="299.0" mnemonicParsing="false" onAction="#extendBook" prefWidth="60.0" text="Extend" />
-      <Button fx:id="penalizeB" layoutX="390.0" layoutY="299.0" mnemonicParsing="false" onAction="#penalize" prefWidth="61.0" text="Penalize" />
-      <Button fx:id="cancelB" layoutX="604.0" layoutY="299.0" mnemonicParsing="false" onAction="#cancel" prefWidth="60.0" text="Cancel" visible="false" />
+      <Button fx:id="borrowB" layoutX="176.0" layoutY="286.0" mnemonicParsing="false" onAction="#borrow" prefWidth="60.0" text="Borrow">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="returnB" layoutX="249.0" layoutY="287.0" mnemonicParsing="false" onAction="#returnBook" prefWidth="60.0" text="Return">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="extendB" layoutX="323.0" layoutY="287.0" mnemonicParsing="false" onAction="#extendBook" prefWidth="60.0" text="Extend">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="penalizeB" layoutX="396.0" layoutY="286.0" mnemonicParsing="false" onAction="#penalize" prefHeight="26.0" prefWidth="77.0" text="Penalize">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelB" layoutX="650.0" layoutY="286.0" mnemonicParsing="false" onAction="#cancel" prefWidth="60.0" text="Cancel" visible="false">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Label fx:id="returnL" layoutX="522.0" layoutY="195.0" text="Return date" visible="false" />
       <Label fx:id="extendL" layoutX="522.0" layoutY="195.0" text="Extend date" visible="false" />
       <Label fx:id="penaltyL" layoutX="521.0" layoutY="195.0" text="Penalty date" visible="false" />

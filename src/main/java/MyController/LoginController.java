@@ -39,14 +39,15 @@ public class LoginController implements Initializable {
         user = new User(username, password);
         int c = 0;
         for(User u : USERS)
-            if(u.equals(user)) {
+            if(u.equals(user) && user.getUsername().equals("null") == false) {
                 Main.primaryStage.setScene(Main.menuScene);
                 System.out.println("Successfully!");
 //                status.setText("Login successfully!");
                 c = 1;
                 break;
-            }
-//        Main.primaryStage.setScene(Main.menuScene);
+
+//        Main.primaryStage.setScene(Main.menuScene)
+            };
         if(c == 0) {
             System.out.println("Unsuccessfully!");
 //            status.setText("Login unsuccessfully!");

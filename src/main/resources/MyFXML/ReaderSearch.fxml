@@ -4,11 +4,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="155.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.ReaderSearchController">
+<AnchorPane prefHeight="155.0" prefWidth="410.0" style="-fx-background-color: #D0B8A8;" stylesheets="@../MyCss/My.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.ReaderSearchController">
    <children>
-      <Button fx:id="searchB" layoutX="116.0" layoutY="108.0" mnemonicParsing="false" onAction="#search" text="Search" />
-      <Button fx:id="cancelB" layoutX="208.0" layoutY="108.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button fx:id="searchB" layoutX="88.0" layoutY="121.0" mnemonicParsing="false" onAction="#search" prefHeight="26.0" prefWidth="82.0" text="Search">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelB" layoutX="225.0" layoutY="121.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="82.0" text="Cancel">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
       <Label layoutX="16.0" layoutY="46.0" text="Reader ID" />
       <Label layoutX="26.0" layoutY="74.0" text="Name" />
       <Label layoutX="216.0" layoutY="46.0" text="Phone" />
@@ -17,6 +24,9 @@
       <TextField fx:id="phoneTf" layoutX="266.0" layoutY="41.0" prefHeight="28.0" prefWidth="123.0" />
       <TextField fx:id="nameTf" layoutX="81.0" layoutY="70.0" prefHeight="28.0" prefWidth="123.0" />
       <TextField fx:id="idCardTf" layoutX="266.0" layoutY="70.0" prefHeight="28.0" prefWidth="123.0" />
-      <Label layoutX="17.0" layoutY="14.0" text="Reader's information" />
+      <Label layoutX="95.0" text="Reader's information">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
    </children>
 </AnchorPane>

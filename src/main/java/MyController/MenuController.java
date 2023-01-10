@@ -12,7 +12,7 @@ import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
     @FXML
-    private Button bookB, readerB, borrowB, logoutB;
+    private Button bookB, readerB, borrowBb, logoutB;
     public static final Stage[] stages = new Stage[3];
     @FXML
     private void bookManager(ActionEvent event){

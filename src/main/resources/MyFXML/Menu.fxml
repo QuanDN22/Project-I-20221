@@ -17,7 +17,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="borrowB" layoutX="280.0" layoutY="245.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý mượn - trả" textFill="#d9c3c3">
+      <Button fx:id="borrowBb" layoutX="280.0" layoutY="245.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý mượn - trả" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
