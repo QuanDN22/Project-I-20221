@@ -10,8 +10,6 @@ module com.example.project_i {
     requires java.sql;
     requires annotations;
 
-    opens com.example.project_i to javafx.fxml;
-    exports com.example.project_i;
     opens MyMain to javafx.graphics;
     exports MyMain;
     opens MyController to javafx.controls,javafx.fxml;

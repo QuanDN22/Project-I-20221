@@ -9,19 +9,19 @@
 
 <AnchorPane fx:id="sceneMenu" prefHeight="359.0" prefWidth="584.0" style="-fx-background-color: #A77979;" stylesheets="@../MyCss/My.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MyController.MenuController">
    <children>
-      <Button fx:id="bookB" layoutX="280.0" layoutY="135.0" mnemonicParsing="false" onAction="#bookManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý sách" textFill="#d9c3c3">
+      <Button fx:id="bookB" layoutX="280.0" layoutY="135.0" mnemonicParsing="false" onAction="#bookManager" prefHeight="40.0" prefWidth="200.0" text="Book Management" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="readerB" layoutX="280.0" layoutY="190.0" mnemonicParsing="false" onAction="#readerManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý độc giả" textFill="#d9c3c3">
+      <Button fx:id="readerB" layoutX="280.0" layoutY="190.0" mnemonicParsing="false" onAction="#readerManager" prefHeight="40.0" prefWidth="200.0" text="Reader Management" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="borrowBb" layoutX="280.0" layoutY="245.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Quản lý mượn - trả" textFill="#d9c3c3">
+      <Button fx:id="borrowBb" layoutX="280.0" layoutY="245.0" mnemonicParsing="false" onAction="#borrowManager" prefHeight="40.0" prefWidth="200.0" text="Borrow Management" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Button fx:id="logoutB" layoutX="280.0" layoutY="300.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="200.0" text="Đăng xuất" textFill="#d9c3c3">
+      <Button fx:id="logoutB" layoutX="280.0" layoutY="300.0" mnemonicParsing="false" onAction="#logout" prefHeight="40.0" prefWidth="200.0" text="Log out" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
@@ -45,9 +45,9 @@
             <Image url="@../image/logout1.png" />
          </image>
       </ImageView>
-      <Label layoutX="271.0" layoutY="23.0" text="Lựa chọn chức năng" textFill="#0a0404">
+      <Label layoutX="280.0" layoutY="23.0" text="HOME PAGE" textFill="#0a0404">
          <font>
-            <Font name="SansSerif Bold" size="28.0" />
+            <Font name="SansSerif Bold" size="32.0" />
          </font>
       </Label>
       <ImageView fitHeight="359.0" fitWidth="240.0" pickOnBounds="true" preserveRatio="true">
@@ -55,7 +55,7 @@
             <Image url="@../image/library.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="registerR" layoutX="280.0" layoutY="80.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="200.0" text="Đăng ký đọc giả" textFill="#d9c3c3">
+      <Button fx:id="registerR" layoutX="280.0" layoutY="80.0" mnemonicParsing="false" onAction="#register" prefHeight="40.0" prefWidth="200.0" text="Sign Up to Readers" textFill="#d9c3c3">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
